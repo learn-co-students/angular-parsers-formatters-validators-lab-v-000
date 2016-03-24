@@ -67,6 +67,10 @@
                     name="coupon"
                     ng-model="ctrl.coupon"
                     required="required" />
+
+                    <div ng-show='form.coupon.$error.couponCode'>
+                      Currently incorrect. Coupon should be 2 numbers, 4 letters, then 2 numbers.
+                    </div>
             <span class="coupon">{{ ctrl.coupon }}</span>
         </form>
     </div>
