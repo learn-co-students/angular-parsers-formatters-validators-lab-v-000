@@ -67,6 +67,17 @@
                     name="coupon"
                     ng-model="ctrl.coupon"
                     required="required" />
+                
+                <div ng-messages = "form.coupon.$error">
+                <!--tests run so that message is shown at all times (unless valid code)
+                    that is, it always checks to see the current message of the div 
+                    therefore using ng-if will fail the first 2 tests since the div will not exists within the DOM 
+                    If this was not the case, the line above would be...
+                        <div ng-messages = "form.coupon.$error" ng-if = "form.coupon.$touched>" -->
+
+                    <div ng-message = "coupon"> Code is incorrect</div>
+                </div>
+
             <span class="coupon">{{ ctrl.coupon }}</span>
         </form>
     </div>
