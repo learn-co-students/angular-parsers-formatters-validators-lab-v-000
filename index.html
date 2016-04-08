@@ -62,12 +62,15 @@
                 <label>Coupon Code</label>
 
                 <input
-                    make-lower
-                    coupon-code
                     name="coupon"
                     ng-model="ctrl.coupon"
+                    make-lower
+                    coupon-code
                     required="required" />
+                    <div ng-show="form.coupon.$error.coupon">Coupon code is incorrect
+                    </div>
             <span class="coupon">{{ ctrl.coupon }}</span>
+ 
         </form>
     </div>
 
