@@ -1,7 +1,14 @@
-function makeLower() {
-	
+function MakeLower() {
+	return {
+		require: 'ngModel',
+		link: function (scope, element, attrs, ngModel) {
+			ngModel.$formatters.push(function(str){
+				return str.toLowerCase();
+			})
+		}
+	}
 }
 
 angular
 	.module('app')
-	.directive('makeLower', makeLower);
+	.directive('makeLower', MakeLower);
