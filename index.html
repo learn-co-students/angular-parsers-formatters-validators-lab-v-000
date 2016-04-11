@@ -66,9 +66,7 @@
                     coupon-code
                     name="coupon"
                     ng-model="ctrl.coupon"
-                    required="required"
-                    couponCode
-                    make-lower />
+                    required="required" />
                 <div ng-messages="form.coupon.$error" ng-if="form.coupon.$dirty">
                   <div ng-message='coupon'>This code is incorrect</div>
                 </div>
