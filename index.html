@@ -57,6 +57,11 @@
 
                 {{ ctrl.name }}
 
+                <div ng-messages="form.name.$error" ng-if="form.name.$touched">
+                    <div ng-message="required">Name is required</div>
+                    <div ng-message="minlength">Must be at least 2 characters</div>
+                </div>
+
                 <br />
 
                 <label>Coupon Code</label>
@@ -67,7 +72,17 @@
                     name="coupon"
                     ng-model="ctrl.coupon"
                     required="required" />
-            <span class="coupon">{{ ctrl.coupon }}</span>
+
+                <div ng-show="form.coupon.$error.coupon">
+                    Coupon code is incorrect!
+                </div>
+               
+                <!-- <div ng-messages="form.coupon.$error" ng-if="form.coupon.$touched">
+                    <div ng-message="required">Coupon code is required</div>
+                    <div ng-message="coupon">Code must be 2 digits, 4 characters, 2 digits</div>
+                </div> -->
+
+                 <span class="coupon">{{ ctrl.coupon }}</span>
         </form>
     </div>
 
