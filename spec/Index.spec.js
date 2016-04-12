@@ -6,7 +6,7 @@ describe('Form Test', function() {
 	var coupon = element(by.css('input[name="coupon"]'));
 
 	describe('Coupon', function () {
-		var messages= element(by.css('input[name="coupon"] + div'));
+		var messages= element(by.css('input[name="coupon"]'));
 
 		it('should make sure the coupon is incorrect', function() {
 			coupon.click();
