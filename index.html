@@ -50,12 +50,18 @@
                 <label>Name</label>
 
                 <input
+                    type="text"
                     name="name"
                     minlength="2"
                     ng-model="ctrl.name"
                     required="required" />
 
-                {{ ctrl.name }}
+                <div ng-messages="form.name.$error" ng-if="form.name.$touched">
+                  <div ng-message="required">Name required!</div>
+                  <div ng-message="minlength">Name requires at least 2 characters!</div>
+                </div>
+
+                <span>{{ ctrl.name }}</span>
 
                 <br />
 
@@ -67,7 +73,13 @@
                     name="coupon"
                     ng-model="ctrl.coupon"
                     required="required" />
+
+                <div ng-show="form.coupon.$error.couponCode">
+                    Coupon code is incorrect!
+                </div>
+
             <span class="coupon">{{ ctrl.coupon }}</span>
+
         </form>
     </div>
 
