@@ -44,6 +44,7 @@
 
     <div ng-app="app" class="app">
         <div ng-controller="FormController as ctrl">
+            {{form.coupon}}
             <h5>Register</h5>
 
             <form name="form">
@@ -63,11 +64,21 @@
 
                 <input
                     make-lower
-                    coupon-code
                     name="coupon"
                     ng-model="ctrl.coupon"
-                    required="required" />
-            <span class="coupon">{{ ctrl.coupon }}</span>
+                    required="required"
+                    coupon-code/>
+<!--I think it should be this to allow for other errors 
+but even though it works in the browser it won't pass the test:
+                    <div ng-messages="form.coupon.$error" ng-if="form.coupon.$error.coupon && form.coupon.$touched">
+                        <div id="errormessage" ng-message="coupon">incorrect coupon</div>
+                    </div> -->
+
+                    <div ng-show="form.coupon.$error.coupon">
+                    incorrect coupon!
+                    </div>
+
+            <span class="coupon" coupon-code>{{ ctrl.coupon }}</span>
         </form>
     </div>
 
