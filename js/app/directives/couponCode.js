@@ -4,7 +4,7 @@ function couponCode() {
     require: 'ngModel',
     link: function (scope, element, attrs, ngModel) {
       ngModel.$validators.couponCode = function (value) {
-        return value.test(/\d{2}[a-z]{4}\d{2}/i);
+        return /\d{2}[a-z]{4}\d{2}/i.test(value);
       };
     }
   };
