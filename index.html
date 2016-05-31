@@ -67,11 +67,11 @@
                     name="coupon"
                     ng-model="ctrl.coupon"
                     required="required" />
-                <div ng-if="form.coupon.$touched">
-                  <div ng-show="form.coupon.$error.coupon">
-                    Please enter coupon code in correct format!
-                  </div>
+
+                <div ng-show="form.coupon.$error.coupon">
+                  incorrect
                 </div>
+
             <span class="coupon">{{ ctrl.coupon }}</span>
 
         </form>
