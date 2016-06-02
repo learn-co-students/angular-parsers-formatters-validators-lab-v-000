@@ -53,6 +53,7 @@
                     name="name"
                     minlength="2"
                     ng-model="ctrl.name"
+                    make-lower
                     required="required" />
 
                 {{ ctrl.name }}
@@ -67,7 +68,11 @@
                     name="coupon"
                     ng-model="ctrl.coupon"
                     required="required" />
+                <div ng-messages="form.coupon.$error" >
+                    <div ng-if="form.coupon.$dirty && form.coupon.$invalid" ng-message="coupon">incorrect</div>
+                </div>
             <span class="coupon">{{ ctrl.coupon }}</span>
+
         </form>
     </div>
 
