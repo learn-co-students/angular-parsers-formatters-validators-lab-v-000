@@ -50,6 +50,7 @@
                 <label>Name</label>
 
                 <input
+                    make-lower
                     name="name"
                     minlength="2"
                     ng-model="ctrl.name"
@@ -67,7 +68,11 @@
                     name="coupon"
                     ng-model="ctrl.coupon"
                     required="required" />
+                <div ng-messages="form.coupon.$error">
+                    <div ng-message="code">Format is incorrect.</div>
+                </div>
             <span class="coupon">{{ ctrl.coupon }}</span>
+
         </form>
     </div>
 

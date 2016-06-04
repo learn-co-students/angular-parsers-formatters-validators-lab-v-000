@@ -4,11 +4,6 @@ function FormController($scope) {
 	ctrl.name = '';
 	ctrl.coupon = '';
 
-	$scope.$watch(function () {
-		return ctrl.name;
-	}, function (newValue) {
-		console.log(newValue);
-	});
 }
 
 angular
