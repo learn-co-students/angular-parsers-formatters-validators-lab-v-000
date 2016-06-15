@@ -7,6 +7,7 @@ function FormController($scope) {
 	$scope.$watch(function () {
 		return ctrl.name;
 	}, function (newValue) {
+		var newValue = newValue.toLowerCase();
 		console.log(newValue);
 	});
 }
