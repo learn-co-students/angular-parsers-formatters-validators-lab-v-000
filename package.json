@@ -1,0 +1,7 @@
+{
+  "name": "angular-parsers-formatters-validators-lab-v-000",
+  "version": "1.0.0",
+  "devDependencies": {
+    "express": "4.13.4"
+  }
+}
