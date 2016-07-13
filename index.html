@@ -75,9 +75,9 @@
                         name="coupon"
                         ng-model="ctrl.coupon"
                         required="required" />
-                    <div ng-messages="form.coupon.$error" ng-if="form.coupon.$touched">
+                    <div ng-messages="form.coupon.$error">
                         <div ng-message="required">Coupon Code is required!</div>
-                        <div ng-message="coupon">Incorrect coupon code</div>
+                        <div ng-message="coupon">You entered an incorrect coupon code</div>
                     </div>
                     <span class="coupon">{{ ctrl.coupon }}</span>
                 </div>
