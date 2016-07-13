@@ -47,28 +47,42 @@
             <h5>Register</h5>
 
             <form name="form">
-                <label>Name</label>
+                <div>
+                    <label>Name</label>
 
-                <input
-                    name="name"
-                    minlength="2"
-                    ng-model="ctrl.name"
-                    required="required" />
+                    <input
+                        name="name"
+                        minlength="2"
+                        ng-model="ctrl.name"
+                        required="required" />
 
-                {{ ctrl.name }}
+                    {{ ctrl.name }}
 
-                <br />
+                    <div ng-messages="form.name.$error" ng-if="form.name.$touched">
+                        <div ng-message="required">Name is required!</div>
+                        <div ng-message="minlength">Name must be at least 2 characters long</div>
+                    </div>
 
-                <label>Coupon Code</label>
+                    <br />
+                </div>
+                
+                <div>
+                    <label>Coupon Code</label>
 
-                <input
-                    make-lower
-                    coupon-code
-                    name="coupon"
-                    ng-model="ctrl.coupon"
-                    required="required" />
-            <span class="coupon">{{ ctrl.coupon }}</span>
-        </form>
+                    <input
+                        make-lower
+                        coupon-code
+                        name="coupon"
+                        ng-model="ctrl.coupon"
+                        required="required" />
+                    <div ng-messages="form.coupon.$error">
+                        <div ng-message="required">Coupon Code is required!</div>
+                        <div ng-message="coupon">You entered an incorrect coupon code</div>
+                    </div>
+                    <span class="coupon">{{ ctrl.coupon }}</span>
+                </div>
+            </form>
+        </div>
     </div>
 
     <script src="js/angular.js"></script>
