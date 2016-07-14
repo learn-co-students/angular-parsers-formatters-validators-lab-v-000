@@ -6,9 +6,6 @@ function makeLower() {
 			ngModel.$parsers.push(function (str) {
 					return str.toLowerCase();
 			});
-			ngModel.$formatters.push(function (str) {
-					return str.toLowerCase();
-			});
 		}
 	}
 }
