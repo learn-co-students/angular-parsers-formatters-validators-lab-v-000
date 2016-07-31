@@ -47,6 +47,17 @@
             <h5>Register</h5>
 
             <form name="form">
+
+              <label>Company</label>
+
+              <input name="company" ng-model="ctrl.company"/>
+
+              {{ ctrl.company }}
+
+              <br />
+
+
+
                 <label>Name</label>
 
                 <input
@@ -62,14 +73,18 @@
                 <label>Coupon Code</label>
 
                 <input
-                    make-lower
-                    coupon-code
-                    name="coupon"
-                    ng-model="ctrl.coupon"
-                    required="required" />
-            <span class="coupon">{{ ctrl.coupon }}</span>
-        </form>
-    </div>
+                  make-lower
+                  coupon-code
+                  name="coupon"
+                  ng-model="ctrl.coupon"
+                  required="required" />
+
+                <div ng-show="form.coupon.$error.coupon">
+                  incorrect
+                </div>
+                <span class="coupon">{{ ctrl.coupon }}</span>
+            </form>
+            </div>
 
     <script src="js/angular.js"></script>
     <script src="js/angular-messages.js"></script>
