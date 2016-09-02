@@ -7,7 +7,6 @@ describe('Form Test', function() {
 
 	describe('Coupon', function () {
 		var messages= element(by.css('input[name="coupon"] + div'));
-
 		it('should make sure the coupon is incorrect', function() {
 			coupon.click();
 			coupon.sendKeys('21');

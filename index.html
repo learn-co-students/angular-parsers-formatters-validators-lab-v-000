@@ -42,34 +42,42 @@
 </head>
 <body>
 
-    <div ng-app="app" class="app">
-        <div ng-controller="FormController as ctrl">
-            <h5>Register</h5>
+  <div ng-app="app" class="app">
 
-            <form name="form">
-                <label>Name</label>
 
-                <input
-                    name="name"
-                    minlength="2"
-                    ng-model="ctrl.name"
-                    required="required" />
+  <div ng-controller="FormController as ctrl">
+          <h5>Register</h5>
 
-                {{ ctrl.name }}
+          <form name="form">
+              <label>Name</label>
 
-                <br />
+              <input
+                  name="name"
+                  minlength="2"
+                  ng-model="ctrl.name"
+                  required="required" />
 
-                <label>Coupon Code</label>
+              {{ ctrl.name }}
 
-                <input
-                    make-lower
-                    coupon-code
-                    name="coupon"
-                    ng-model="ctrl.coupon"
-                    required="required" />
-            <span class="coupon">{{ ctrl.coupon }}</span>
-        </form>
-    </div>
+              <br />
+
+              <label>Coupon Code</label>
+
+              <input
+                  make-lower
+                  coupon-code
+                  name="coupon"
+                  ng-model="ctrl.coupon"
+                  required="required" />
+
+              <div ng-show="form.coupon.$error.couponCode">
+                  Coupon code is incorrect!
+              </div>
+
+              <span class="coupon">{{ ctrl.coupon }}</span>
+          </form>
+      </div>
+  </div>
 
     <script src="js/angular.js"></script>
     <script src="js/angular-messages.js"></script>
