@@ -10,7 +10,6 @@
         body {
             font-family: "Helvetica Neue", Verdana, sans-serif;
         }
-
         table {
             border-collapse: collapse;
             width: 100%;
@@ -18,7 +17,6 @@
             border-radius: 5px;
             margin: 50px 0;
         }
-
         input {
             font-size: 16px;
             padding: 5px 7px;
@@ -30,11 +28,9 @@
             border-bottom: 2px solid rgba(0, 0, 0, 0.1);
             color: rgba(0, 0, 0, 0.8);
         }
-
         tr:not(:last-of-type) {
             border-bottom: 1px solid map-get($border-color, light);
         }
-
         td {
             padding: 16px 12px 14px;
         }
@@ -57,7 +53,6 @@
 
                 {{ ctrl.name }}
 
-                <br />
 
                 <label>Coupon Code</label>
 
@@ -67,6 +62,11 @@
                     name="coupon"
                     ng-model="ctrl.coupon"
                     required="required" />
+
+                <div ng-show="form.coupon.$error.coupon">
+                    That code is incorrect!
+                </div>                
+
             <span class="coupon">{{ ctrl.coupon }}</span>
         </form>
     </div>
