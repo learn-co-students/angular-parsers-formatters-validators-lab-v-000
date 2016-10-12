@@ -6,7 +6,7 @@ describe('Form Test', function() {
 	var coupon = element(by.css('input[name="coupon"]'));
 
 	describe('Coupon', function () {
-		var messages= element(by.css('input[name="coupon"] + div'));
+		var messages = element(by.css('input[name="coupon"] + div'));
 
 		it('should make sure the coupon is incorrect', function() {
 			coupon.click();
@@ -17,7 +17,7 @@ describe('Form Test', function() {
 		it('should make sure the coupon is incorrect', function() {
 			coupon.click();
 			coupon.sendKeys('DDDD21');
-			expect(messages.getText()).toEqual('');
+			expect(messages.getText()).toContain('incorrect');
 		});
 
 		it('should set the coupon to always be lowercase', function() {
