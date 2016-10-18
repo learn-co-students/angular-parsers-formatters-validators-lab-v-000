@@ -67,6 +67,11 @@
                     name="coupon"
                     ng-model="ctrl.coupon"
                     required="required" />
+            <div ng-messages="form.coupon.$error" ng-if="form.coupon.$touched">
+                <div ng-message="coupon">
+                    Coupon format is incorrect. <em>Correct format: 11aaaa11</em>
+                </div>
+            </div>            
             <span class="coupon">{{ ctrl.coupon }}</span>
         </form>
     </div>
