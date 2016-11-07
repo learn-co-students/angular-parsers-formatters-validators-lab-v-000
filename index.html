@@ -48,27 +48,40 @@
 
             <form name="form">
                 <label>Name</label>
-
                 <input
                     name="name"
                     minlength="2"
                     ng-model="ctrl.name"
                     required="required" />
 
-                {{ ctrl.name }}
+                <div ng-if="form.name.$touched" ng-messages="form.name.$error">
+                    <div ng-message="required">name is required</div>
+                    <div ng-message="minlength">more than 2 characters required</div>
+                </div>
+
+                <span ng-bind="ctrl.name"></span>
 
                 <br />
 
                 <label>Coupon Code</label>
-
                 <input
                     make-lower
-                    coupon-code
+                    couponCode
                     name="coupon"
                     ng-model="ctrl.coupon"
                     required="required" />
-            <span class="coupon">{{ ctrl.coupon }}</span>
-        </form>
+
+                <!-- <div ng-show="form.coupon.$error.required">coupon code required</div>
+                <div ng-show="form.coupon.$error.couponCode">2 digit, 4 alpha, 2 digit format required</div> -->
+
+                <div ng-if="form.coupon.$touched" ng-messages="form.coupon.$error">
+                    <div ng-message="required">coupon code required</div>
+                    <div ng-message="couponCode">2 digit, 4 alpha, 2 digit format required</div>
+                </div>
+
+                <span class="coupon" ng-bind="ctrl.coupon"></span>
+            </form>
+        </div>
     </div>
 
     <script src="js/angular.js"></script>
