@@ -10,7 +10,7 @@ function makeLower() {
       // ngModel.$formatters.push(function(str){
       //   return str.toUpperCase();
       // });
-    };
+    }
   }
 }
 
