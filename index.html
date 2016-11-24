@@ -43,32 +43,31 @@
 <body>
 
     <div ng-app="app" class="app">
-        <div ng-controller="FormController as ctrl">
-            <h5>Register</h5>
+      <div ng-controller="FormController as ctrl">
+        <h5>Register</h5>
 
-            <form name="form">
-                <label>Name</label>
+        <form name="form">
+          <label>Name</label>
 
-                <input
-                    name="name"
-                    minlength="2"
-                    ng-model="ctrl.name"
-                    required="required" />
+          <input name="name" minlength="2" ng-model="ctrl.name" required="required" />
+            <div ng-messages="form.name.$error" ng-if="form.name.$touched">
+              <div ng-message="required">This field require</div>
+              <div ng-message="minlength">Name must be at list 2 character</div>
+            </div>
+          {{ ctrl.name }}
 
-                {{ ctrl.name }}
+          <br />
 
-                <br />
+          <label>Coupon Code</label>
 
-                <label>Coupon Code</label>
-
-                <input
-                    make-lower
-                    coupon-code
-                    name="coupon"
-                    ng-model="ctrl.coupon"
-                    required="required" />
-            <span class="coupon">{{ ctrl.coupon }}</span>
+          <input make-lower coupon-code name="coupon" ng-model="ctrl.coupon" required="required" />
+          <div ng-messages="form.coupon.$error">
+            <div ng-message="required">This field require</div>
+            <div ng-message="coupon">incorrect</div>
+          </div>
+          <span class="coupon">{{ ctrl.coupon }}</span>
         </form>
+      </div>
     </div>
 
     <script src="js/angular.js"></script>
