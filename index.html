@@ -41,8 +41,7 @@
     </style>
 </head>
 <body>
-
-    <div ng-app="app" class="app">
+  <div ng-app="app" class="app">
         <div ng-controller="FormController as ctrl">
             <h5>Register</h5>
 
@@ -67,9 +66,16 @@
                     name="coupon"
                     ng-model="ctrl.coupon"
                     required="required" />
-            <span class="coupon">{{ ctrl.coupon }}</span>
-        </form>
+
+                <div ng-show="form.coupon.$error.coupon">
+                    Coupon code is incorrect!
+                </div>
+
+                <span class="coupon">{{ ctrl.coupon }}</span>
+            </form>
+        </div>
     </div>
+
 
     <script src="js/angular.js"></script>
     <script src="js/angular-messages.js"></script>
