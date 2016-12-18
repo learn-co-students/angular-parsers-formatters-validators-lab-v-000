@@ -47,27 +47,36 @@
             <h5>Register</h5>
 
             <form name="form">
-                <label>Name</label>
 
+                <label>Name</label>
                 <input
                     name="name"
                     minlength="2"
                     ng-model="ctrl.name"
-                    required="required" />
+                    required />
 
                 {{ ctrl.name }}
 
                 <br />
 
                 <label>Coupon Code</label>
-
                 <input
                     make-lower
                     coupon-code
                     name="coupon"
                     ng-model="ctrl.coupon"
-                    required="required" />
+                    required />
+            <div ng-messages="form.coupon.$error">
+                <div ng-message="required">Code is required</div>
+                <div ng-message="coupon">Code is incorrect. (must begin with two digits, then four letters, then two digits)</div>
+            </div>
             <span class="coupon">{{ ctrl.coupon }}</span>
+
+            <br><br>
+            Errors => {{ form.coupon.$error | json }}
+            <br><br>
+            Coupon Obj => {{ form.coupon | json }}
+
         </form>
     </div>
 
