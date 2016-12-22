@@ -55,6 +55,8 @@
                     ng-model="ctrl.name"
                     required="required" />
 
+
+
                 {{ ctrl.name }}
 
                 <br />
@@ -68,6 +70,9 @@
                     ng-model="ctrl.coupon"
                     required="required" />
             <span class="coupon">{{ ctrl.coupon }}</span>
+            <div ng-messages="form.coupon.$errors">
+                <div ng-message="coupon-code">Display Error Message Here</div>  
+            </div>
         </form>
     </div>
 
