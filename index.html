@@ -47,28 +47,37 @@
             <h5>Register</h5>
 
             <form name="form">
-                <label>Name</label>
+              <label>Name</label>
 
-                <input
-                    name="name"
-                    minlength="2"
-                    ng-model="ctrl.name"
-                    required="required" />
+              <input
+                  make-lower
+                  name="name"
+                  minlength="2"
+                  ng-model="ctrl.name"
+                  required="required" />
 
-                {{ ctrl.name }}
+              {{ ctrl.name }}
 
-                <br />
+              <br />
+              <div ng-messages="form.name.$error" ng-if="form.name.$touched">
+                <div ng-message="required">Name is required</div>
+                <div ng-message="minlength">Name must be atleast 2 characters long.</div>
+              </div>
 
-                <label>Coupon Code</label>
+              <label>Coupon Code</label>
 
-                <input
-                    make-lower
-                    coupon-code
-                    name="coupon"
-                    ng-model="ctrl.coupon"
-                    required="required" />
+              <input
+                  make-lower
+                  coupon-code
+                  name="coupon"
+                  ng-model="ctrl.coupon"
+                  required="required" >
+              <div ng-show="form.coupon.$error.coupon">
+                Coupon code is incorrect!
+              </div>
             <span class="coupon">{{ ctrl.coupon }}</span>
         </form>
+      </div>
     </div>
 
     <script src="js/angular.js"></script>
