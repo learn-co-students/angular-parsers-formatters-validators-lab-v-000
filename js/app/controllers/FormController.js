@@ -9,7 +9,9 @@ function FormController($scope) {
 	}, function (newValue) {
 		console.log(newValue);
 	});
+
 }
+
 
 angular
 	.module('app')
