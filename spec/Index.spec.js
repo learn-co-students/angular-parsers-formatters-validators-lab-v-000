@@ -14,7 +14,7 @@ describe('Form Test', function() {
 			expect(messages.getText()).toContain('incorrect');
 		});
 
-		it('should make sure the coupon is incorrect', function() {
+		it('should make sure the coupon is correct', function() {
 			coupon.click();
 			coupon.sendKeys('DDDD21');
 			expect(messages.getText()).toEqual('');
