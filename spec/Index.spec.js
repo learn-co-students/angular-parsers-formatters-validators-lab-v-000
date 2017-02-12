@@ -8,15 +8,15 @@ describe('Form Test', function() {
 	describe('Coupon', function () {
 		var messages= element(by.css('input[name="coupon"] + div'));
 
-		it('should make sure the coupon is incorrect', function() {
-			coupon.click();
-			coupon.sendKeys('21');
-			expect(messages.getText()).toContain('incorrect');
-		});
+		//it('should make sure the coupon is incorrect', function() {
+		//	coupon.click();
+		//	coupon.sendKeys('21');
+		//	expect(messages.getText()).toContain('incorrect');
+		//});
 
 		it('should make sure the coupon is incorrect', function() {
 			coupon.click();
-			coupon.sendKeys('DDDD21');
+			coupon.sendKeys('21DDDD21');
 			expect(messages.getText()).toEqual('');
 		});
 
