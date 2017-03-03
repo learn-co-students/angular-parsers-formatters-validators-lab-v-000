@@ -47,27 +47,43 @@
             <h5>Register</h5>
 
             <form name="form">
-                <label>Name</label>
+                <div>
+                    <label>Name</label>
 
-                <input
-                    name="name"
-                    minlength="2"
-                    ng-model="ctrl.name"
-                    required="required" />
+                    <input
+                        name="name"
+                        minlength="2"
+                        ng-model="ctrl.name"
+                        required="required" />
 
-                {{ ctrl.name }}
+                    {{ ctrl.name }}
+
+                    <div ng-messages="form.name.$error" ng-if="form.name.$touched">
+                        <div ng-message="minlength">Should be 2 character min</div>
+                        <div ng-message="required">A name is required!</div>
+                    </div>
+                </div>
 
                 <br />
+                
+                <div> 
+                    <label>Coupon Code</label>
 
-                <label>Coupon Code</label>
-
-                <input
-                    make-lower
-                    coupon-code
-                    name="coupon"
-                    ng-model="ctrl.coupon"
-                    required="required" />
-            <span class="coupon">{{ ctrl.coupon }}</span>
+                    <input
+                        make-lower
+                        coupon-code
+                        name="coupon"
+                        ng-model="ctrl.coupon"
+                        required="required" />
+                    <span ng-model="ctrl.coupon" class="coupon" make-lower>{{ ctrl.coupon }}</span>
+                    
+                    <div class="coupon-errors">
+                        <div ng-messages="form.coupon.$error" ng-if="form.coupon.$touched">
+                            <div ng-message="required">A coupon is required</div>
+                            <div ng-message="format">This coupon is incorrect</div>
+                        </div>
+                    </div>
+                </div>
         </form>
     </div>
 
