@@ -67,6 +67,10 @@
                     name="coupon"
                     ng-model="ctrl.coupon"
                     required="required" />
+
+                <div ng-messages="form.coupon.$error" ng-if="form.coupon.$dirty">
+                  <span ng-message='correct'>This code is incorrect</span>
+                </div>
             <span class="coupon">{{ ctrl.coupon }}</span>
         </form>
     </div>
