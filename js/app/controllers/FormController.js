@@ -1,4 +1,4 @@
-function FormController($scope) {
+function FormController($scope, $timeout) {
 	var ctrl = this;
 
 	ctrl.name = '';
