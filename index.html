@@ -48,27 +48,30 @@
 
             <form name="form">
                 <label>Name</label>
-
                 <input
                     name="name"
                     minlength="2"
                     ng-model="ctrl.name"
                     required="required" />
 
-                {{ ctrl.name }}
+                <span ng-bind="ctrl.name"></span>
 
                 <br />
 
                 <label>Coupon Code</label>
-
                 <input
                     make-lower
                     coupon-code
                     name="coupon"
                     ng-model="ctrl.coupon"
                     required="required" />
-            <span class="coupon">{{ ctrl.coupon }}</span>
-        </form>
+                <div ng-show="form.coupon.$error.coupon">
+                    incorrect format
+                </div>
+
+                <span class="coupon" ng-bind="ctrl.coupon"></span>
+            </form>
+        </div>
     </div>
 
     <script src="js/angular.js"></script>
