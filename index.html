@@ -67,6 +67,15 @@
                     name="coupon"
                     ng-model="ctrl.coupon"
                     required="required" />
+                    <div ng-show="form.coupon.$error.coupon">
+                      Coupon code is incorrect!
+                    </div>
+                    <!-- Why will the below not work. It it the same as the README -->
+                    <!-- <div ng-messages="form.coupon.$errors">
+                      <div ng-message="coupon">
+                        Coupon code incorrect
+                      </div>
+                    </div> -->
             <span class="coupon">{{ ctrl.coupon }}</span>
         </form>
     </div>
